@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar.js'
 import Textform from './components/Textform.js'
+import React  from 'react';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
   }
 
   return (
+    
     <>
       <Navbar title="TextEditor" mode={mode} handledarkmode={handledarkmode} />
       <Textform mode={mode} />
