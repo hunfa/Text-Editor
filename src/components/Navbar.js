@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function NavBar({title,handledarkmode,mode}) {
+
+export default function NavBar({title,handledarkmode,mode,handlealert}) {
   return (
+   
     <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{title}</a>
@@ -16,17 +18,18 @@ export default function NavBar({title,handledarkmode,mode}) {
           <li className="nav-item">
             <a className="nav-link" href="/">About</a>
           </li>
-        
+    
         
         </ul>
         <div class="form-check form-switch">
-  <input onClick={handledarkmode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <input onClick={handledarkmode} class="form-check-input" type="checkbox" role="switch" aria-checked id="flexSwitchCheckDefault"/>
   <label style={{color:mode==="dark"?"white":"black"}} class="form-check-label" for="flexSwitchCheckDefault">Enable Darkmode</label>
 </div>
       </div>
     </div>
-    
+   
   </nav>
+    
   )
 }
 

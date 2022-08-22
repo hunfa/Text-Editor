@@ -1,13 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
-
-export default function Textform({mode}) {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+export default function Textform({mode,handlealert}) {
 
 
   const handleupclick = () => {
     console.log(text);
     const newtext = text.toUpperCase();
     settext(newtext);
+    handlealert("Converted to uppercase","success");
+
   }
 
   const handleclearclick = () => {
@@ -15,7 +18,7 @@ export default function Textform({mode}) {
   }
 
   const handlecopyclick=()=>{
-   
+    toast.success("Text copied!")
     navigator.clipboard.writeText(text);
   }
 
@@ -45,7 +48,7 @@ export default function Textform({mode}) {
       
 
       <p style={{color:mode==="dark"?"white":"black"}} className='my-3'>Words = {text.split(" ").filter(word => word !== '').length}  Characters={text.length}</p>
-
+      <ToastContainer autoClose={1000}/>
     </div>
 
   )
